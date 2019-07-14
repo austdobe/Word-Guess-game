@@ -1,12 +1,11 @@
-  var letters = [
-    "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
+  var letters = [/a-z/];
   // array of words
-  var play = [
-    "touchdown", "saftey", "punt", "kick-return", "kick-off", "penalty", "punt-return", "field-goal", "tackle", "broken-tackle", "juke", "spin", "truck", "interception", "pass", "run", "pitch", "hurdle"
+  var animals = [
+    "dog", "cat", "parrot", "falcon", "eagle", "fish", "shark", "aligator", "turtle", "snake", "dolphin", "tiger", "lion", "horse", "zebra", "elephant", "mouse", "squirrle"
   ];
   //random word
-  var randNum = Math.floor(Math.random() * play.length);
-  var chosenWord = play[randNum].toUpperCase();
+  var randNum = Math.floor(Math.random() * animals.length);
+  var chosenWord = animals[randNum];
   var underscore = [];
   //user Guesses
   var right = [];
@@ -20,7 +19,7 @@
   var win = 0;
   var loses = 0;
   var lives = 10;
- 
+  var lettersLeft=underscore.length
   //create underscore based on random word
   console.log(chosenWord)
     var generateUnderscore = ()=>{
@@ -35,22 +34,27 @@
     }
     //capture user guess
     document.onkeypress = function(event){ 
-        var userGuess = String.fromCharCode(event.keyCode).toUpperCase();
+        var userGuess = String.fromCharCode(event.keyCode).toLowerCase();
       //Validate user guess
       if(letters.indexOf(userGuess)){
         console.log("User Guessed: "+ userGuess);
         //Loop to check guess vs. chosen word
         for(var j = 0; j<chosenWord.length; j++){
           if(chosenWord[j]!== userGuess){
-          wrong.push(userGuess)
-          console.log("these are wrong " + wrong)
-          lives--;
-          wrongGuess.innerHTML = wrong;
-          lives.innerHTML = lives;
+            wrong.push(userGuess)
+            console.log("these are wrong " + wrong)
+            lives--;
+
           }else{
-            underscore[j]=userGuess;
-            gameBoard.innerHTML= underscore.join(" ");
-          }
+              underscore[j]== userGuess;
+              gameBoard.innerHTML= underscore.join(" ");
+              lettersLeft --;
+              if(lettersLeft===0){
+                alert("You Win")
+                win++;
+            }
+          } 
+          
         }
       }
       //Invalid Entry
@@ -58,10 +62,7 @@
         alert("Incorrect Entry please enter letter from A-Z")
       };
     };
-    if(underscore.join(' ')===chosenWord){
-        alert("You Win")
-        win++;
-      };
+   
     
     
     
