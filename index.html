@@ -4,7 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- reset -->
+    <link rel="stylesheet" href="assets/css/reset.css">
+    <!-- style -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <!-- bootstrap -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+   
     <title>Hangman</title>
 </head>
 <body>
@@ -12,6 +18,12 @@
         <h1>Welcome to hangman</h1>
         <p>Step up and see if you can save Dave. He has been taken. Attempt to get 5 words correct and he will be set free. However, if you miss 5 letters a single word attempt.... It wont be good for Dave.</p>
     </div>
-    
+    <div class="container game-board">
+        <div class="underscore">Underscore</div>
+        <div class="correctGuess">Correct Guess</div>
+        <div class="wrongGuess">Incorrect Guess</div>
+    </div>
+     <!-- javascript -->
+     <script type="text/javascript" src="assets/javascript/game.js"></script>
 </body>
 </html>
