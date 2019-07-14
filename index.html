@@ -6,23 +6,30 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <!-- reset -->
     <link rel="stylesheet" href="assets/css/reset.css">
-    <!-- style -->
-    <link rel="stylesheet" href="assets/css/style.css">
     <!-- bootstrap -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!--Style-->
+    <link rel="stylesheet" href="assets/css/style.css">
+
    
     <title>Hangman</title>
 </head>
 <body>
-    <div class="jumbotron">
-        <h1>Welcome to hangman</h1>
-        <p>Step up and see if you can save Dave. He has been taken. Attempt to get 5 words correct and he will be set free. However, if you miss 5 letters a single word attempt.... It wont be good for Dave.</p>
+    <header class="row">
+        <h1 class="col-lg-12">Welcome to hangman</h1>
+    </header>
+    <div class="row">
+            <div class="scoreboard col-lg-6 wrongGuess">
+                <h5>Incorrect Guess</h5>
+            </div>
+            <div class="scoreboard col-lg-6 lives">
+                <h5>Lives</h5>
+            </div>
     </div>
-    <div class="container game-board">
-        <div class="underscore">Underscore</div>
-        <div class="correctGuess">Correct Guess</div>
-        <div class="wrongGuess">Incorrect Guess</div>
+    <div class="container">
+        <div id="gameBoard"></div>
     </div>
+    <button id="restart" class="btn-alert">Start</button>
      <!-- javascript -->
      <script type="text/javascript" src="assets/javascript/game.js"></script>
 </body>

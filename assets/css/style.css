@@ -1,18 +1,36 @@
-.correctGuess{
-    width: 80%;
-    height: 100px; 
-    border: solid 2px black;
-    margin: 20px auto;
+.scoreboard{
+    width: 200px;
+    height: 75px; 
+    display:inline-block;
+    text-align: center;
+    margin:0 auto;
+    color:white;
 }
-.wrongGuess{
-    width: 80%;
-    height: 100px; 
+.container{
+    width: 90%;
+    height: 500px; 
     border: solid 2px black;
-    margin: 20px auto;
+    margin:20px auto;
+    background-color:lightgray;
 }
-.underscore{
-    width: 80%;
-    height: 100px; 
-    border: solid 2px black;
-    margin: 20px auto;
+
+#gameBoard{
+    height:50px;
+    text-align: center;
+    font-style: normal;
+    font-size: 30px;
+    
 }
+.row{
+    text-align: center;
+    background-color:lightgray;
+    padding-bottom:20px;
+}
+
+body{
+    background-color:aqua;
+}
+h5{
+    font-size: 16px;
+}
+
