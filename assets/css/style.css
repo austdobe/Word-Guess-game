@@ -26,6 +26,10 @@
     background-color:lightgray;
     padding-bottom:20px;
 }
+.lives{
+    color:black;
+    background-color:beige;
+}
 
 body{
     background-color:aqua;
