@@ -5,31 +5,43 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <!-- reset -->
-    <link rel="stylesheet" href="assets/css/reset.css">
+    <link rel="stylesheet" href="./assets/css/reset.css">
+    <!-- javascript -->
+    <script type="text/javascript" src="./assets/javascript/game.js"></script>
     <!-- bootstrap -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <!--Style-->
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
     <title>Hangman</title>
 </head>
 <body>
     <header class="row">
-        <h1 class="col-lg-12">Welcome to hangman</h1>
+        <h1 class="col-lg-12 text-center">Welcome to hangman</h1>
     </header>
-    <div class="row">
-            <div class="scoreboard col-lg-6 wrongGuess">
-                <h5>Incorrect Guess</h5>
-            </div>
-            <div class="scoreboard col-lg-6 lives">
+    <div class="row scoreBoard">
+            <div class="col-lg-4 text-center">
                 <h5>Lives</h5>
-                <p></p>
+                <div id="lives"></div>
+            </div>
+            <div class="col-lg-4 text-center">
+                <h5>Wins</h5>
+                <div id="wins"></div>
+            </div>
+            <div class="col-lg-4 text-center">
+                <h5>losses</h5>
+                <div id="losses"></div>
             </div>
     </div>
     <div class="container">
-        <div id="gameBoard"></div>
+        <div id="gameBoard">
+            <div class="row">
+                <h5 class="col-12 text-center">Incorrect Guess</h5>
+                <div id="wrongGuess"></div>
+            </div>
+            <div class="row">
+                <div id="underscore"></div>
+            </div>
+        </div>
     </div>
-    <button id="restart" class="btn-alert">Start</button>
-     <!-- javascript -->
-     <script type="text/javascript" src="assets/javascript/game.js"></script>
 </body>
 </html>
