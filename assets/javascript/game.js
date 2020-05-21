@@ -1,57 +1,61 @@
-// var letters = [/a-z/i];
-var letters = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"];
+// let letters = [/a-z/i];
+const letters = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"];
 // array of words
-var animals = [
-  "dog", "cat", "parrot", "falcon", "eagle", "fish", "shark", "aligator", "turtle", "snake", "dolphin", "tiger", "lion", "horse", "zebra", "elephant", "mouse", "squirrle"
+const animals = [
+  "dog", "cat", "falcon", "eagle", "fish", "shark", "snake", "dolphin", "tiger", "lion", "horse", "zebra", "mouse"
 ];
 //random word
-var chosenWord = "";
-var underscore = [];
-var blanks = 0;
-var chosenLetters = [];
+let chosenWord = "";
+let underscore = [];
+let blanks = 0;
+let chosenLetters = [];
 //user Guesses
-var wrongLetters = [];
-
+let wrongLetters = [];
 //scoreboard
-var win = 0;
-var losses = 0;
-var guess = 9;
+let win = 0;
+let losses = 0;
+let guess = 9;
+
+let lives = document.getElementById("lives")
+let word = document.getElementById('underscore')
+let wrong = document.getElementById('wrongGuess')
 
 function startGame(){
 
   guess = 9;
-
-  chosenWord = animals[Math.floor(Math.random() * animals.length)];
-
-  chosenLetters = chosenWord.split("");
-  console.log(chosenLetters);
-  blanks = chosenLetters.length;
-
-  console.log(chosenWord);
-
   underscore = [];
-
-  wrongGuess = [];
-
-  for (var i = 0; i < blanks; i++) {
-    underscore.push("_");
+  wrongLetters = [];
+  // Calculate random chosenWord
+  chosenWord = animals[Math.floor(Math.random() * animals.length)];
+  // console.log(chosenWord);
+  // split random work into an array of letters
+  chosenLetters = chosenWord.split("");
+  // console.log(chosenLetters);
+  // set blanks to length of letters
+  blanks = chosenLetters.length;
+  console.log(blanks)
+ 
+  // Push underscore for number of blanks 
+  for (let i = 0; i < blanks; i++) {
+    underscore.push(" _ ");
     
   }
 
   console.log(underscore);
+  console.log(guess)
 
-  document.getElementById("lives").innerHTML = guess;
+  lives.innerHTML = guess;
 
-  document.getElementById("underscore").innerHTML = underscore.join(" ");
+  word.innerHTML = underscore
 
-  document.getElementById("wrongGuess").innerHTML = wrongLetters.join(" ");
+  wrong.innerHTML = wrongLetters.join(" ");
 }
 
 function checkLetters(letter){
 
-  var letterInWord = false;
+  let letterInWord = false;
 
-  for (var i = 0; i < blanks; i++) {
+  for (let i = 0; i < blanks; i++) {
     if (chosenWord[i] === letter)
 
     letterInWord = true;
@@ -59,21 +63,21 @@ function checkLetters(letter){
   }
 
   if(letterInWord){
-    for (var j = 0; j < blanks; j++) {
+    for (let j = 0; j < blanks; j++) {
       if(chosenWord[j]===letter){
         underscore[j] = letter;
       }
     }
     console.log(underscore);
   }else{
-    wrongGuesses.push(letter);
+    wrongLetters.push(letter);
 
     guess --;
   }
 }
 
 function endRound(){
-  console.log("Win Counter: "+win + " | Loss counter: "+ loses + " | Guesses: "+ guess);
+  console.log("Win Counter: "+win + " | Loss counter: "+ losses + " | Guesses: "+ guess);
 
 
   document.getElementById("lives").innerHTML = guess;
@@ -114,7 +118,7 @@ document.onkeyup = function(event){
 
 
 // function GenerateUnderScore(){
-// for(var i = 0; i <  chosenWord.length; i++){
+// for(let i = 0; i <  chosenWord.length; i++){
 //       underscore[i]="  __  ";
 //   }
 // console.log(underscore)
@@ -138,7 +142,7 @@ document.onkeyup = function(event){
 //       }
 //   };
 //   function checkGuess(){
-//     for(var j=i; j<chosenWord.length; j++){
+//     for(let j=i; j<chosenWord.length; j++){
 //       underscore[j]=userGuess;
     
 //   }
