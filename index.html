@@ -6,7 +6,6 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <!-- reset -->
     <link rel="stylesheet" href="./assets/css/reset.css">
-    
     <!-- bootstrap -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <!--Style-->
@@ -14,39 +13,60 @@
     <title>Hangman</title>
 </head>
 <body>
-    <div class="row">
+    <div class="row wrapper">
         <div class="col-md-12">
-            <header class="row">
-                <h1 class="col-lg-12 text-center">Sorry this Site is under construction!!! Come back soon to see the new and improved hangman!!</h1>
+            <header class="header">
+                <h1 class="col-lg-12 text-center">Welcome to the zoo!</h1>
+                <h4 class="text-center">Can you guess the the correct animals??</h4>
             </header>
-            <!-- <div class="row scoreBoard">
-                    <div class="col-lg-4 text-center">
+        </div>
+    </div>
+    <div class="row gameBoard">
+        <div class="col-lg-3">
+            <div class="scoreBoard">
+                <h4 class="text-center">Your current score...</h4>
+                <div class="row text-center">
+                    <div class="text-center lives">
                         <h5>Lives</h5>
                         <h5><span id="lives"></span></h5>
                     </div>
-                    <div class="col-lg-4 text-center">
+                </div>
+                <div class="row">
+                    <div class="text-center wins">
                         <h5>Wins</h5>
                         <h5 id="wins"></h5>
                     </div>
-                    <div class="col-lg-4 text-center">
+                </div>
+                <div class="row">
+                    <div class="text-center losses">
                         <h5>losses</h5>
                         <h5 id="losses"></h5>
                     </div>
+                </div>
             </div>
+        </div>
+        <div class="col-lg-6">
             <div class="container">
                 <div id="gameBoard">
-                    <div class="row">
-                        <h5 class="col-12 text-center">Incorrect Guess</h5>
-                        <h5 class='col-12 text-center'><span id="wrongGuess"></span></h5>
-                    </div>
-                    <div class="row">
-                        <h5 class="text-center col-12"><span id="underscore"></span></h5>
+                    <div class="row currentWord">
+                        <h4 class="text-center col-12">Current Word Guess</h4>
+                        <h5 class="text-center col-12">
+                            <span id="underscore"></span>
+                        </h5>
                     </div>
                 </div>
-            </div> -->
+            </div>
+        </div>
+        <div class="col-lg-3">
+            <div class="row incorrectLetters">
+                <h5 class="col-12       text-center">Incorrect Guess</h5>
+                <h5 class='col-12 text-center' >
+                <span id="wrongGuess"></span>
+                </h5>
+            </div>
         </div>
     </div>
     <!-- javascript -->
-    <!-- <script type="text/javascript" src="./assets/javascript/game.js"></script> -->
+    <script type="text/javascript" src="./assets/javascript/game.js"></script>
 </body>
 </html>

@@ -1,25 +1,67 @@
-
-
-.container{
-    width: 100%;
-    height: 500px; 
-    border: solid 2px black;
-    margin:20px auto;
-    background-color:lightgray;
+body{
+    padding: 20px 30px;
+    background-color:#696D7D;
 }
-#gameBoard{
-    height: 200px;
-    width: 100%;
-    border: solid black 1px;
+.wrapper{
+    background-color: #6F9283;
+    border: solid 2px black;
+    margin-bottom: 20px
+}
+.gameBoard{
+    height: 70vh;
 }
 .scoreBoard{
-    margin: 20px auto;
+    border: solid 2px black;
+    border-radius: 10px;
+    background-color:#CDC6A5;
+    height: 100%;
+    padding: 10px 20px;
+    margin: 0 auto;
 }
-body{
-    background-color:aqua;
-    overflow-x: hidden;
-}
-h5{
-    font-size: 16px;
-}
+.incorrectLetters{
+    background-color: #CDC6A5;
+    border: solid 2px black;
+    border-radius: 10px;
+    height: 100%;
+    margin: 0 auto;
+    padding: 20px 30px;
 
+}
+.container{
+    background-color: #8D9F87;
+    padding: 0 60px;
+    height: 100%
+}
+.wins{
+    background-color: #F0Dcca;
+    border: solid 2px black;
+    border-radius: 10px;
+    width: 75%;
+    height: 10vh;
+    margin: 10% auto;
+}
+.losses{
+    background-color: #F0Dcca;
+    border: solid 2px black;
+    border-radius: 10px;
+    width: 75%;
+    height: 10vh;
+    margin: 10% auto;
+
+}
+.lives{
+    background-color: #F0Dcca;
+    border: solid 2px black;
+    border-radius: 10px;
+    width: 75%;
+    height: 10vh;
+    margin: 10% auto;
+
+}
+.currentWord{
+    background-color: #F0Dcca;
+    border: solid 2px black;
+    border-radius: 40%;
+    margin: 0 auto;
+    padding: 10px 20px;
+}
