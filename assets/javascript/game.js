@@ -91,7 +91,7 @@ function endRound(){
 
     alert("You Win!!!");
 
-    document.getElementById("wins").innerHTML = wins;
+    document.getElementById("wins").innerHTML = win;
 
     startGame();
   } else if(guess === 0){
@@ -114,44 +114,3 @@ document.onkeyup = function(event){
 
   endRound();
 };
-
-
-
-// function GenerateUnderScore(){
-// for(let i = 0; i <  chosenWord.length; i++){
-//       underscore[i]="  __  ";
-//   }
-// console.log(underscore)
-// // generate game board
-// gameBoard.innerHTML = underscore.join("  ")
-// }
-// GenerateUnderScore();
-// document.getElementsByClassName("live").innerHTML=guess;
-//     //capture user guess
-// document.onkeypress = function validateGuess(event){ 
-//   userGuess = String.fromCharCode(event.keyCode).toLowerCase();
-//   //Validate user guess
-//   if(letters.indexOf(userGuess)>-1){
-//       checkGuess();
-//       checkScore();
-//       }
-//   else{
-//       wrong.push(userGuess);
-//       console.log(wrong);
-//       document.getElementsByClassName("wrongGuess").innerHTML = wrong.join();
-//       }
-//   };
-//   function checkGuess(){
-//     for(let j=i; j<chosenWord.length; j++){
-//       underscore[j]=userGuess;
-    
-//   }
-//   }
-//   function checkScore(){
-//     if(underscore===chosenWord){
-//       alert("you win")
-//       win ++;
-//         }
-//   }
-
-
