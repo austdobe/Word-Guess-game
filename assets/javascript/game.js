@@ -1,5 +1,4 @@
-// let letters = [/a-z/i];
-const letters = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"];
+const allowedLetters = /^[A-Za-z]+$/;
 // array of words
 const animals = [
   "dog", "cat", "falcon", "eagle", "fish", "shark", "snake", "dolphin", "tiger", "lion", "horse", "zebra", "mouse"
@@ -37,7 +36,7 @@ function startGame(){
  
   // Push underscore for number of blanks 
   for (let i = 0; i < blanks; i++) {
-    underscore.push(" _ ");
+    underscore.push("  _  ");
     
   }
 
@@ -46,43 +45,45 @@ function startGame(){
 
   lives.innerHTML = guess;
 
-  word.innerHTML = underscore
+  word.innerHTML = underscore.join("  ")
 
   wrong.innerHTML = wrongLetters.join(" ");
 }
 
 function checkLetters(letter){
 
-  let letterInWord = false;
+  
+    let letterInWord = false;
 
-  for (let i = 0; i < blanks; i++) {
-    if (chosenWord[i] === letter)
+    for (let i = 0; i < blanks; i++) {
+      if (chosenWord[i] === letter)
 
-    letterInWord = true;
-    
-  }
-
-  if(letterInWord){
-    for (let j = 0; j < blanks; j++) {
-      if(chosenWord[j]===letter){
-        underscore[j] = letter;
-      }
+      letterInWord = true;
+      
     }
-    console.log(underscore);
-  }else{
-    wrongLetters.push(letter);
 
-    guess --;
-  }
+    if(letterInWord){
+      for (let j = 0; j < blanks; j++) {
+        if(chosenWord[j]===letter){
+          underscore[j] = letter;
+        }
+      }
+      console.log(underscore);
+    }else{
+      wrongLetters.push(letter);
+
+      guess --;
+    }
+  
 }
 
 function endRound(){
-  console.log("Win Counter: "+win + " | Loss counter: "+ losses + " | Guesses: "+ guess);
+  console.log("Win counter: "+ win + " | Loss counter: "+ losses + " | Guesses: "+ guess);
 
 
   document.getElementById("lives").innerHTML = guess;
 
-  document.getElementById("gameBoard").innerHTML = underscore.join(" ");
+  document.getElementById("underscore").innerHTML = underscore.join("  ");
 
   document.getElementById("wrongGuess").innerHTML = wrongLetters.join(" ");
 
@@ -107,10 +108,12 @@ function endRound(){
 startGame();
 
 document.onkeyup = function(event){
-
+  
   userGuess = String.fromCharCode(event.which).toLowerCase();
-
-  checkLetters(userGuess);
-
+  if(userGuess.match(allowedLetters)){
+      checkLetters(userGuess);
+  }else{
+    alert("Please choose a letter between a and z")
+  }
   endRound();
 };

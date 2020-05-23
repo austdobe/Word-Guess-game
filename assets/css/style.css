@@ -1,9 +1,14 @@
 body{
-    padding: 20px 30px;
     background-color:#696D7D;
+    padding: 20px 30px;
+}
+.background{
+    background-color: #6F9283;
+    padding: 30px 60px;
+    border-radius: 10%;
 }
 .wrapper{
-    background-color: #6F9283;
+    background-color: #CDC6A5;
     border: solid 2px black;
     margin-bottom: 20px
 }
