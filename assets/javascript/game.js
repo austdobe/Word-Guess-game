@@ -1,7 +1,6 @@
 const allowedLetters = /^[A-Za-z]+$/;
 // array of words
-const animals = [
-  "dog", "cat", "falcon", "eagle", "fish", "shark", "snake", "dolphin", "tiger", "lion", "horse", "zebra", "mouse"
+const animals = ["bear", "dog", "cat", "falcon", "eagle", "fish", "shark", "snake", "dolphin", "tiger", "lion", "horse", "zebra", "mouse", 
 ];
 //random word
 let chosenWord = "";
@@ -10,20 +9,23 @@ let blanks = 0;
 let chosenLetters = [];
 //user Guesses
 let wrongLetters = [];
+let guessedLetter = [];
 //scoreboard
 let win = 0;
 let losses = 0;
 let guess = 9;
-
+//prepare HTML modifications
 let lives = document.getElementById("lives")
 let word = document.getElementById('underscore')
 let wrong = document.getElementById('wrongGuess')
 
 function startGame(){
-
+  //reset game arrays and guesses
   guess = 9;
-  underscore = [];
-  wrongLetters = [];
+  underscore = [ ];
+  wrongLetters = [ ];
+  guessedLetter = [ ];
+  console.log(guessedLetter)
   // Calculate random chosenWord
   chosenWord = animals[Math.floor(Math.random() * animals.length)];
   // console.log(chosenWord);
@@ -39,14 +41,11 @@ function startGame(){
     underscore.push("  _  ");
     
   }
-
-  console.log(underscore);
-  console.log(guess)
-
+  // console.log(underscore);
+  // console.log(guess)
+  //modify HTML to show current game standings
   lives.innerHTML = guess;
-
   word.innerHTML = underscore.join("  ")
-
   wrong.innerHTML = wrongLetters.join(" ");
 }
 
@@ -97,7 +96,7 @@ function endRound(){
     startGame();
   } else if(guess === 0){
     losses++;
-    alert("You lose");
+    alert("Sorry the correct word was " + chosenWord + ". Try again!");
 
     document.getElementById("losses").innerHTML = losses;
 
@@ -110,10 +109,20 @@ startGame();
 document.onkeyup = function(event){
   
   userGuess = String.fromCharCode(event.which).toLowerCase();
-  if(userGuess.match(allowedLetters)){
+  
+  // if(userGuess.search(guessedLetter)=== -1){
+    if(userGuess.match(allowedLetters)){
+      
       checkLetters(userGuess);
-  }else{
-    alert("Please choose a letter between a and z")
-  }
+      guessedLetter.push(userGuess)
+    }
+    else{
+      alert("Please choose a letter between a and z")
+    }
+  // } else{
+    // alert("You already chose " + userGuess +". Keep guessing!")
+   
+  // }
+  
   endRound();
 };

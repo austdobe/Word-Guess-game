@@ -4,41 +4,23 @@ body{
 }
 .background{
     background-color: #6F9283;
-    padding: 30px 60px;
-    border-radius: 10%;
+    padding: 20px 60px;
 }
 .wrapper{
     background-color: #CDC6A5;
-    border: solid 2px black;
-    margin-bottom: 20px
-}
-.gameBoard{
-    height: 70vh;
+    border: solid 1px black;
+    border-radius: 10px;
 }
 .scoreBoard{
     border: solid 2px black;
     border-radius: 10px;
     background-color:#CDC6A5;
-    height: 100%;
+    height: 500px;
     padding: 10px 20px;
-    margin: 0 auto;
-}
-.incorrectLetters{
-    background-color: #CDC6A5;
-    border: solid 2px black;
-    border-radius: 10px;
-    height: 100%;
-    margin: 0 auto;
-    padding: 20px 30px;
-
-}
-.container{
-    background-color: #8D9F87;
-    padding: 0 60px;
-    height: 100%
+    margin: 20px auto;
 }
 .wins{
-    background-color: #F0Dcca;
+    background-color: #F0DCCA;
     border: solid 2px black;
     border-radius: 10px;
     width: 75%;
@@ -46,7 +28,7 @@ body{
     margin: 10% auto;
 }
 .losses{
-    background-color: #F0Dcca;
+    background-color: #F0DCCA;
     border: solid 2px black;
     border-radius: 10px;
     width: 75%;
@@ -55,7 +37,7 @@ body{
 
 }
 .lives{
-    background-color: #F0Dcca;
+    background-color: #F0DCCA;
     border: solid 2px black;
     border-radius: 10px;
     width: 75%;
@@ -63,10 +45,35 @@ body{
     margin: 10% auto;
 
 }
+.incorrectLetters{
+    background-color: #CDC6A5;
+    border: solid 2px black;
+    border-radius: 10px;
+    height: 500px;
+    margin: 20px auto;
+    padding: 20px 30px;
+
+}
+.container{
+    background-color: #8D9F87;
+    padding: 20px 60px;
+    height: fit-content;
+    margin: 20px auto;
+}
+.gameBoard{
+    height: fit-content;
+}
 .currentWord{
-    background-color: #F0Dcca;
+    background-color: #F0DCCA;
     border: solid 2px black;
     border-radius: 40%;
-    margin: 0 auto;
+    margin: 10px auto;
     padding: 10px 20px;
+}
+.hangman{
+    background-color: #F0DCCA;
+    height: 300px;
+    width: 100%;
+    margin: 30px auto 10px auto;
+    border: solid 2px black;
 }
