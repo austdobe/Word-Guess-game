@@ -1,7 +1,6 @@
 const allowedLetters = /^[A-Za-z]+$/;
 // array of words
-const animals = ["bear", "dog", "cat", "falcon", "eagle", "fish", "shark", "snake", "dolphin", "tiger", "lion", "horse", "zebra", "mouse", 
-];
+const animals = ["bear", "dog", "cat", "falcon", "eagle", "fish", "shark", "snake", "dolphin", "tiger", "lion", "horse", "zebra", "mouse", "elephant", "camel", "monkey", "fox", "alligator", "antelope", "flamingo", "beaver"];
 //random word
 let chosenWord = "";
 let underscore = [];
@@ -25,13 +24,16 @@ function startGame(){
   underscore = [ ];
   wrongLetters = [ ];
   guessedLetter = [ ];
-  console.log(guessedLetter)
+  // console.log("This is Guessed Letter Reset "+ guessedLetter)
+
   // Calculate random chosenWord
   chosenWord = animals[Math.floor(Math.random() * animals.length)];
   // console.log(chosenWord);
+
   // split random work into an array of letters
   chosenLetters = chosenWord.split("");
   // console.log(chosenLetters);
+
   // set blanks to length of letters
   blanks = chosenLetters.length;
   console.log(blanks)
@@ -69,9 +71,11 @@ function checkLetters(letter){
       }
       console.log(underscore);
     }else{
-      wrongLetters.push(letter);
+      
+        wrongLetters.push(letter);
 
-      guess --;
+        guess --;
+      
     }
   
 }
@@ -107,22 +111,25 @@ function endRound(){
 startGame();
 
 document.onkeyup = function(event){
-  
   userGuess = String.fromCharCode(event.which).toLowerCase();
   
-  // if(userGuess.search(guessedLetter)=== -1){
+    // Removes any button strike that is not a letter, space bar, delete, numbers, ect. 
     if(userGuess.match(allowedLetters)){
-      
-      checkLetters(userGuess);
-      guessedLetter.push(userGuess)
+      // checks if the letter was already guessed
+      if(guessedLetter.includes(userGuess)=== false){
+        //runs letter stroke through a function to check if in chosen word.
+        checkLetters(userGuess);
+        // pushes letter into an array of guessed letters. This array is used to prevent duplicate loss of lives with same letter.
+        guessedLetter.push(userGuess)
+        // console.log("This is guessed Letter after Push " + guessedLetter)
+      } else{
+        alert("You already chose " + userGuess + ". Please try another letter between A and Z")
+      }
     }
     else{
-      alert("Please choose a letter between a and z")
+      alert("Please choose a letter between A and Z")
     }
-  // } else{
-    // alert("You already chose " + userGuess +". Keep guessing!")
-   
-  // }
+ 
   
   endRound();
 };
